@@ -4,10 +4,6 @@
     u_name: "abhay1"
   vars_files:
   - vars.yaml
-  vars_prompt:
-  - name: u_name
-    prompt: Enter user name
-    private: false
   tasks:
   - name: print hello
     ansible.builtin.debug:
