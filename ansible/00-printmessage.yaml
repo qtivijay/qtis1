@@ -1,7 +1,9 @@
 - name: print message
   hosts: web
-  vars_files:
-  - vars.yaml
+  vars_prompt:
+  - name: user name
+    prompt: Please enter the user name
+    private: false # not confidential
   tasks:
   - name: print hello
     vars:
