@@ -1,7 +1,7 @@
 - name: print message
   hosts: web
   vars_prompt:
-  - name: user name
+  - name: u_name
     prompt: Please enter the user name
     private: false # not confidential
   tasks:
