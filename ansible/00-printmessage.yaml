@@ -1,6 +1,8 @@
 - name: print message
   hosts: web
+  vars:
+    u_name: "Ansible"
   tasks:
   - name: print hello
     ansible.builtin.debug:
-      msg: "Hi Ansible"
+      msg: "Hi {{u_name}}"
