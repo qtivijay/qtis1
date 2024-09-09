@@ -3,7 +3,7 @@
   vars_prompt:
   - name: u_name
     prompt: Please enter the user name
-    private: false # not confidential
+    private: true # not confidential
   tasks:
   - name: print hello
     vars:
