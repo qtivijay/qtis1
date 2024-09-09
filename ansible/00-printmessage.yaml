@@ -11,6 +11,6 @@
   tasks:
   - name: print hello
     vars:
-      u_name: "abhay"
+      u_name: "abhaytasklevel"
     ansible.builtin.debug:
       msg: "Hi {{u_name}}"
