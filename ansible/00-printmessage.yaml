@@ -10,7 +10,5 @@
     private: false
   tasks:
   - name: print hello
-    vars:
-      u_name: "abhaytasklevel"
     ansible.builtin.debug:
       msg: "Hi {{u_name}}"
