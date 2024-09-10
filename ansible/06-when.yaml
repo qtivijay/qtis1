@@ -1,0 +1,12 @@
+- name: find whether given number is more than 10 or not
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: my_number
+    prompt: Please enter the number
+    private: false # not confidential
+  tasks:
+  - name: check whether number is greater than 10
+    ansible.builtin.debug:
+      msg: "{{my_number}} is greater than 10"
+    when: mynumber > =10
