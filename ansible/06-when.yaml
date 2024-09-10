@@ -9,6 +9,7 @@
   - name: check user exist or not
     ansible.builtin.command: id expense
     register: USER #here USER is a variable that gets output from above command
+    ignore_errors: true
     
   
   - name: check whether number is greater than 10
