@@ -6,10 +6,10 @@
     prompt: Please enter the number
     private: false # not confidential
   tasks:
-  - name: check whether number is greater than 10
-    ansible.builtin.debug:
-      msg: "{{my_number}} is greater than 10"
-    when: my_number | int < 10
+  - name: check user exist or not
+    ansible.builtin.command: id expense
+    register: USER #here USER is a variable that gets output from above command
+    
   
   - name: check whether number is greater than 10
     ansible.builtin.debug:
