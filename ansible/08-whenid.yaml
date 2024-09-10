@@ -1,6 +1,6 @@
 - name: when condition
   hosts: local
-  connections: local
+  connection: local
   tasks:
   - name: id command
     ansible.builtin.command: id expense
