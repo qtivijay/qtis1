@@ -1,10 +1,12 @@
-- name: when condition
-  hosts: local
-  connection: local
+- name: create user
+  hosts: web
+  become: yes
   tasks:
-  - name: id command
+  - name: check user exist or not
     ansible.builtin.command: id expense
-    register: id_output
-  - name: print id_output
+    register: USER #here USER is a variable that gets output from above command
+    ignore_errors: True
+
+  - name: print the user information
     ansible.builtin.debug:
-      msg:"{{id_output}}"
+      msg: "user info: {{ USER }}"
