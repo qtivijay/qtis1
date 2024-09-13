@@ -1,6 +1,14 @@
+#T1: install mysql server
+#T2: start the mysql service
+#T3: Check if root user is created or not
+
+
 - name: mysql configuration
   hosts: mysql
   become: yes
+  vars:
+    mysql_password: "ExpenseApp@1"
+    mysql_host: "mysql.vijaydevops.store"
   tasks:
   - name: install MySQL Server
     ansible.builtin.package:
@@ -12,3 +20,13 @@
       name: mysqld
       state: started
       enabled: yes
+  - name: Connecting to mysql server  
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: "{{mysql_password}}"
+      login_host: "{{mysql_host}}"
+    ignore_errors: true  
+    register: mysql_info
+  - name: print the mysql_info
+    ansible.builtin.debug:
+      msg: "{{mysql_info}}"
