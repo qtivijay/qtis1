@@ -1,6 +1,7 @@
 #T1: install mysql server
 #T2: start the mysql service
 #T3: Check if root user is created or not
+#T4: Install dependencies
 
 
 - name: mysql configuration
@@ -30,3 +31,7 @@
   - name: print the mysql_info
     ansible.builtin.debug:
       msg: "{{mysql_info}}"
+  - name: install python lib PyMySQL
+    ansible.builtin.pip:
+      name:
+      - PyMySQL
