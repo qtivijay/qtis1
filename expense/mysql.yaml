@@ -2,6 +2,7 @@
 #T2: start the mysql service
 #T3: Check if root user is created or not
 #T4: Install dependencies
+#T5: if password for root is not set , create password for root.
 
 
 - name: mysql configuration
@@ -35,4 +36,6 @@
   - name: print the mysql_info
     ansible.builtin.debug:
       msg: "{{mysql_info}}"
-  
+  - name: update my sql root password if it not set
+    ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysql_password}}"
+    when: mysql_info.failed == true
