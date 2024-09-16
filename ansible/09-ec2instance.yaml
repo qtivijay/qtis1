@@ -1,3 +1,12 @@
+#Requirements
+# 3 instances and 3 records
+# to avoid any file changes when there is a change in ip address
+# public ip and private ip address from instances based on it we will create records.
+#mysql.vijaydevops.store - private ip of sql
+#backend.vijaydevops.store - private ip of backend
+#frontend.vijaydevops.store - private ip of frontend
+#vijaydevops.store - public ip of frontend
+
 - name: create ec2 and r53 records
   hosts: local
   connection: local
