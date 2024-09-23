@@ -15,7 +15,7 @@
     sg_id: "sg-0bc7f605c01cc2ed2" # replace with your security group id
     ami_id: "ami-09c813fb71547fc4f" # replace with your image id
     instances:
-    - mysql
+    - database
     - backend
     - frontend
     zone: vijaydevops.store #replace your zone
